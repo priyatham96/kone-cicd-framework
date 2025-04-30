@@ -1,0 +1,4 @@
+language: python
+build_type: pip
+deploy_method: cloudformation
+branching_strategy: semantic
