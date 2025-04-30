@@ -1,0 +1,11 @@
+jobs:
+  deploy-cloudformation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy using AWS CloudFormation
+        run: |
+          aws cloudformation deploy \
+            --template-file template.yaml \
+            --stack-name my-stack \
+            --capabilities CAPABILITY_IAM
