@@ -40,30 +40,30 @@ AWS_SECRET_ACCESS_KEY
 
 These will be used by the deployment steps to authenticate with AWS.
 
-3. Define Your Blueprint
+### 3. Define Your Blueprint
 The blueprint.yaml file is the core configuration of the framework. It defines your project's language, build type, deployment method, and quality gates.
 CI/CD Pipeline Structure
 The pipeline consists of the following main components:
 
-1. Linting (flake8 for Python)
+### 1. Linting (flake8 for Python)
 Ensures code adheres to Python PEP-8 standards.
 
-2. Security Scan (bandit)
+### 2. Security Scan (bandit)
 Scans the code for potential security issues and vulnerabilities.
 
-3. Testing (pytest with coverage)
+### 3. Testing (pytest with coverage)
 Runs unit tests and checks that the code coverage meets the specified threshold (80% by default).
 
-4. Code Analysis (pylint)
+### 4. Code Analysis (pylint)
 Static analysis tool to ensure code quality.
 
-5. Build (pip, npm, etc.)
+### 5. Build (pip, npm, etc.)
 The build process is determined based on the build_type specified in the blueprint.yaml.
 
-6. Deployment (e.g., CloudFormation)
+### 6. Deployment (e.g., CloudFormation)
 Deploys the project using the specified method (e.g., AWS CloudFormation).
 
-Branching Strategy
+### Branching Strategy
 The repository follows the dev-staging-main branching strategy:
 
 dev: Development branch where all new features and fixes are integrated.
@@ -74,7 +74,7 @@ main: Production branch that holds the stable, released version of the applicati
 
 The CI/CD pipeline is triggered on push or pull_request events to any of these branches.
 
-Quality Gates
+### Quality Gates
 The following quality gates are enforced during the CI/CD process:
 
 Linting: Code is checked for PEP-8 compliance using flake8.
@@ -87,30 +87,30 @@ Test Coverage: The project must meet a minimum of 80% test coverage (customizabl
 
 These quality gates ensure that only code that meets the required standards is merged into dev, staging, or main.
 
-Customization
+### Customization
 You can customize the CI/CD pipeline based on the needs of your project:
 
-Modify the blueprint.yaml file to specify the language, build type, deployment method, and quality gates.
+### Modify the blueprint.yaml file to specify the language, build type, deployment method, and quality gates.
 
-Add new templates or modify existing ones in the .github/workflows/templates/ directory.
+### Add new templates or modify existing ones in the .github/workflows/templates/ directory.
 
-Extend the pipeline by adding new jobs or steps in the workflow.
+### Extend the pipeline by adding new jobs or steps in the workflow.
 
-Adding New Build Tools
+### Adding New Build Tools
 If you need to add a new build tool (e.g., webpack, maven, etc.), you can create a new YAML file under the .github/workflows/templates/build/ directory, following the same pattern as the existing templates.
 
-Adding New Deployment Methods
+### Adding New Deployment Methods
 For new deployment methods (e.g., Terraform, Docker), add the corresponding template under .github/workflows/templates/deploy/.
 
-Contributing
+### Contributing
 We welcome contributions! If you'd like to improve the framework, please fork the repository and create a pull request with your changes.
 
-Fork the repository
+### Fork the repository
 
-Create a new branch (git checkout -b feature/your-feature)
+### Create a new branch (git checkout -b feature/your-feature)
 
-Make your changes and commit (git commit -am 'Add new feature')
+### Make your changes and commit (git commit -am 'Add new feature')
 
-Push to your branch (git push origin feature/your-feature)
+### Push to your branch (git push origin feature/your-feature)
 
-Create a pull request
+### Create a pull request
