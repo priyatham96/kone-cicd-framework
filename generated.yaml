@@ -1,0 +1,29 @@
+name: Generated CI/CD Pipeline for Kone Project
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - staging
+  pull_request:
+    branches:
+      - main
+      - develop
+      - staging
+
+jobs:
+  lint:
+    uses: ./.github/workflows/shared/lint.yml
+
+  test:
+    uses: ./.github/workflows/shared/test.yml
+
+  security:
+    uses: ./.github/workflows/shared/security.yml
+
+  build:
+    uses: ./.github/workflows/templates/build/${{ github.event.inputs.build_type }}.yml
+
+  deploy:
+    uses: ./.github/workflows/templates/deploy/${{ github.event.inputs.deploy_method }}.yml
