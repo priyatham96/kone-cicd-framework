@@ -1,4 +1,10 @@
 language: python
 build_type: pip
 deploy_method: cloudformation
-branching_strategy: semantic
+branching_strategy: dev-staging-main
+project_name: kone-project
+quality_gates:
+  linting: flake8
+  security_scan: bandit
+  test_coverage: 80%
+  code_analysis: pylint
