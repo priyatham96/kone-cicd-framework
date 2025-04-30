@@ -4,15 +4,6 @@ This repository provides a **CI/CD framework** for the **Kone Project**. It uses
 
 The framework supports different **technology stacks**, various **build types**, and multiple **deployment methods**. By using a configuration file (a "blueprint"), it automatically generates pipelines tailored to the specific needs of each tech stack.
 
-## Table of Contents
-- [Overview](#overview)
-- [Project Setup](#project-setup)
-- [CI/CD Pipeline Structure](#cicd-pipeline-structure)
-- [Branching Strategy](#branching-strategy)
-- [Quality Gates](#quality-gates)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
